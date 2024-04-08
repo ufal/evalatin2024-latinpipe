@@ -32,3 +32,9 @@ distributions from seven randomly instantiated networks for the final
 submission. The code is available at <a href="https://github.com/ufal/evalatin2024-latinpipe">https://github.com/ufal/evalatin2024-latinpipe</a>.<br clear="both">
 
 ---
+
+## Contact
+
+Milan Straka: ``straka@ufal.mff.cuni.cz``
+Jana Straková: ``strakova@ufal.mff.cuni.cz``
+Federica Gamba: ``gamba@ufal.mff.cuni.cz``
