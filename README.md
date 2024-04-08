@@ -35,6 +35,6 @@ submission. The code is available at <a href="https://github.com/ufal/evalatin20
 
 ## Contact
 
-Milan Straka: ``straka@ufal.mff.cuni.cz``
-Jana Straková: ``strakova@ufal.mff.cuni.cz``
+Milan Straka: ``straka@ufal.mff.cuni.cz``\
+Jana Straková: ``strakova@ufal.mff.cuni.cz``\
 Federica Gamba: ``gamba@ufal.mff.cuni.cz``
