@@ -8,7 +8,7 @@ The code will be published before the LT4HALA 2024 workshop, collocated with LRE
 
 <img src="figures/LatinPipe.svg" alt="LatinPipe Architecture" align="right" style="width: 45%">
 
-<h3 align="center">ÚFAL LatinPipe at EvaLatin 2024: Morphosyntactic Analysis of Latin</h3>
+<h3 align="center"><a href="https://arxiv.org/abs/2404.05839">ÚFAL LatinPipe at EvaLatin 2024: Morphosyntactic Analysis of Latin</a></h3>
 
 <p align="center">
   <b>Milan Straka</b> and <b>Jana Straková</b> and <b>Federica Gamba</b><br>
