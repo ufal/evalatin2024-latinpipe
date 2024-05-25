@@ -33,6 +33,47 @@ submission. The code is available at <a href="https://github.com/ufal/evalatin20
 
 ---
 
+## Content of this Repository
+
+- The directory `data` is for all the required data (UD 2.13 data, harmonized
+  PROIEL, Sabellicus, Archimedes Latinus, EvaLatin 2024 test data).
+  - The script `data/fetch_data.sh` downloads and extracts all the data.
+
+- The `latinpipe_evalatin24.py` is the LatinPipe EvaLatin24 source.
+  - It depends on `latinpipe_evalatin24_eval.py`, which is a modularized version
+    of the official evaluation script.
+
+- The `latinpipe_evalatin24_server.py` is a REST server with UDPipe-2-compatible
+  API, using `latinpipe_evalatin24.py` to perform tagging and parsing.
+
+## Training a Model
+
+To train a model on all data, you should
+1. run the `data/fetch_data.sh` script to download all required data,
+2. create a Python environments with the packages listed in `requirements.txt`,
+3. train the model itself using the `latinpipe_evalatin24.py` script.
+
+   To train a model performing UPOS/UFeats tagging, lemmatization, and
+   dependency parsing, we use
+   ```sh
+   la_ud213_all="la_ittb la_llct la_perseus la_proiel la_udante"
+   la_other="la_archimedes la_sabellicus"
+   transformer="bowphs/PhilBerta"  # or bowphs/LaBerta
+
+   udpipe_evalatin24k.py $(for split in dev test train; do echo --$split; for tb in $la_ud213_all; do [ $tb-$split = la_proiel-train ] && tb=la_proielh; echo data/$tb/$tb-ud-$split.conllu; done; done) $(for tb in $la_other; do echo data/$tb/$tb-train.conllu; done) --transformers $transformer --epochs=30 --exp=evalatin24_model --subword_combination=last --epochs_frozen=10 --batch_size=64 --save_checkpoint
+   ```
+
+## Predicting with a Trained Model
+
+To predict with a trained model, you can use the following command:
+```sh
+latinpipe_evalatin24.py --load evalatin24_model/model.weights.h5 --exp target_directory --test input1.conllu input2.conllu
+```
+- the outputs are generated in the target directory, with a `.predicted.conllu` suffix;
+- if you want to also evaluate the predicted files, you can use `--dev` option instead of `--test`;
+
+---
+
 ## Contact
 
 Milan Straka: ``straka@ufal.mff.cuni.cz``\
