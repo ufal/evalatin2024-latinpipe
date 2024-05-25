@@ -70,7 +70,7 @@ To predict with a trained model, you can use the following command:
 latinpipe_evalatin24.py --load evalatin24_model/model.weights.h5 --exp target_directory --test input1.conllu input2.conllu
 ```
 - the outputs are generated in the target directory, with a `.predicted.conllu` suffix;
-- if you want to also evaluate the predicted files, you can use `--dev` option instead of `--test`;
+- if you want to also evaluate the predicted files, you can use `--dev` option instead of `--test`.
 
 ---
 
