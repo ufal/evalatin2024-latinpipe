@@ -1,0 +1,8 @@
+keras
+torch
+--extra-index-url=https://download.pytorch.org/whl/cu118
+transformers
+ufal.chu-liu-edmonds
+
+# For latinpipe_evalatin24_server, you also need
+# ufal.udpipe
