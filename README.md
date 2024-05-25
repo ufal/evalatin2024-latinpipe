@@ -60,7 +60,7 @@ To train a model on all data, you should
    la_other="la_archimedes la_sabellicus"
    transformer="bowphs/PhilBerta"  # or bowphs/LaBerta
 
-   udpipe_evalatin24k.py $(for split in dev test train; do echo --$split; for tb in $la_ud213_all; do [ $tb-$split = la_proiel-train ] && tb=la_proielh; echo data/$tb/$tb-ud-$split.conllu; done; done) $(for tb in $la_other; do echo data/$tb/$tb-train.conllu; done) --transformers $transformer --epochs=30 --exp=evalatin24_model --subword_combination=last --epochs_frozen=10 --batch_size=64 --save_checkpoint
+   latinpipe_evalatin24.py $(for split in dev test train; do echo --$split; for tb in $la_ud213_all; do [ $tb-$split = la_proiel-train ] && tb=la_proielh; echo data/$tb/$tb-ud-$split.conllu; done; done) $(for tb in $la_other; do echo data/$tb/$tb-train.conllu; done) --transformers $transformer --epochs=30 --exp=evalatin24_model --subword_combination=last --epochs_frozen=10 --batch_size=64 --save_checkpoint
    ```
 
 ## Predicting with a Trained Model
