@@ -37,7 +37,10 @@ submission. The code is available at <a href="https://github.com/ufal/evalatin20
 
 - The directory `data` is for all the required data (UD 2.13 data, harmonized
   PROIEL, Sabellicus, Archimedes Latinus, EvaLatin 2024 test data).
-  - The script `data/fetch_data.sh` downloads and extracts all the data.
+  - The script `data/fetch_data.sh` downloads and extracts all the data:
+    ```sh
+    (cd data && sh fetch_data.sh)
+    ```
 
 - The `latinpipe_evalatin24.py` is the LatinPipe EvaLatin24 source.
   - It depends on `latinpipe_evalatin24_eval.py`, which is a modularized version
