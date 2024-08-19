@@ -539,7 +539,7 @@ class LatinPipeModel(keras.Model):
             self._lstm = torch.nn.LSTM(input_shape[-1], self._units, batch_first=True, bidirectional=True)
 
         def call(self, inputs, lengths):
-            packed_result, _ = self._lstm(torch.nn.utils.rnn.pack_padded_sequence(inputs, lengths.cpu(), batch_first=True, enforce_sorted=False))
+            packed_result, _ = self._lstm.module(torch.nn.utils.rnn.pack_padded_sequence(inputs, lengths.cpu(), batch_first=True, enforce_sorted=False))
             unpacked_result = torch.nn.utils.rnn.unpack_sequence(packed_result)
             return torch.nn.utils.rnn.pad_sequence(unpacked_result, batch_first=True, padding_value=0)
 
