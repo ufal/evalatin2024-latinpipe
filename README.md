@@ -49,6 +49,20 @@ submission. The code is available at <a href="https://github.com/ufal/evalatin20
 - The `latinpipe_evalatin24_server.py` is a REST server with UDPipe-2-compatible
   API, using `latinpipe_evalatin24.py` to perform tagging and parsing.
 
+## The Released `latinpipe-evalatin24-240520` Model
+
+The `latinpipe-evalatin24-240520` is a `PhilBerta`-based model for tagging,
+lemmatization, and dependency parsing of Latin, based on the winning entry
+to the EvaLatin 2024 <https://circse.github.io/LT4HALA/2024/EvaLatin> shared
+task. It is released at https://hdl.handle.net/11234/1-5671 under the CC
+BY-NC-SA 4.0 license.
+
+The model is also available in the [UDPipe LINDAT/CLARIN service](http://lindat.mff.cuni.cz/services/udpipe/)
+ and can be used either in a web form or through a REST service.
+
+See the [latinpipe-evalatin24-240520 directory](latinpipe-evalatin24-240520/) for
+the download link, the model performance, and additional information.
+
 ## Training a Model
 
 To train a model on all data, you should
@@ -82,3 +96,20 @@ latinpipe_evalatin24.py --load evalatin24_model/model.weights.h5 --exp target_di
 Milan Straka: ``straka@ufal.mff.cuni.cz``\
 Jana Straková: ``strakova@ufal.mff.cuni.cz``\
 Federica Gamba: ``gamba@ufal.mff.cuni.cz``
+
+## How to Cite
+
+```
+@inproceedings{straka-etal-2024-ufal,
+    title = "{{\'U}FAL} {L}atin{P}ipe at {E}va{L}atin 2024: Morphosyntactic Analysis of {L}atin",
+    author = "Straka, Milan  and Strakov{\'a}, Jana  and Gamba, Federica",
+    editor = "Sprugnoli, Rachele  and Passarotti, Marco",
+    booktitle = "Proceedings of the Third Workshop on Language Technologies for Historical and Ancient Languages (LT4HALA) @ LREC-COLING-2024",
+    month = may,
+    year = "2024",
+    address = "Torino, Italia",
+    publisher = "ELRA and ICCL",
+    url = "https://aclanthology.org/2024.lt4hala-1.24",
+    pages = "207--214"
+}
+```
