@@ -3,6 +3,10 @@
 This repository contains the LatinPipe parser implementation described in
 the _ÚFAL LatinPipe at EvaLatin 2024: Morphosyntactic Analysis of Latin_ paper.
 
+📢 The pretrained model `latinpipe-evalatin24-240520` is available in the [UDPipe
+LINDAT/CLARIN service](http://lindat.mff.cuni.cz/services/udpipe/) and can be
+used either in a web form or through a REST service.
+
 ---
 
 <img src="figures/LatinPipe.svg" alt="LatinPipe Architecture" align="right" style="width: 45%">
